@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+(function () {
+    var that = this,
+        onload = [],
+        handler;
+
+    handler = function () {
+        var argument,
+            i;
+
+        for (i = 0; i < arguments.length; i = i + 1) {
+            argument = arguments[i];
+            if (typeof(argument) === 'function') {
+                onload.push(argument);
+            }
+        }
+
+        return handler;
+    };
+
+    that.total = function () {
+        return onload.length;
+    };
+
+    window.onload = setTimeout(function () {
+        var i;
+
+        for (i = 0; i < onload.length; i = i + 1) {
+            onload[i].call(that);
+        }
+    },2000);
+
+    if (!window.ZS) {
+        window.ZS = {}
+    }
+    window.ZS.onload = handler;
+}());
+
+ZS.onload(function () {
+    document.getElementById('first').innerHTML = '1st function called';
+});
+
+ZS.onload(function () {
+    document.getElementById('second').innerHTML = '2nd function called';
+});
+
+ZS.onload(function () {
+    document.getElementById('third').innerHTML = '3rd function called';
+})(function () {
+    document.getElementById('fourth').innerHTML = '4th function called';
+});
+
+ZS.onload(
+    function () {
+        document.getElementById('fifth').innerHTML = '5th function called';
+    },
+    function () {
+        document.getElementById('sixth').innerHTML = '6th function called';
+    }
+);
+
+ZS.onload(
+    function () {
+        document.getElementById('seventh').innerHTML = '7th function called';
+    },
+    function () {
+        document.getElementById('eighth').innerHTML = '8th function called';
+    },
+    function () {
+        document.getElementById('ninth').innerHTML = '9th function called';
+    }
+);
+
+ZS.onload(function () {
+    document.getElementById('tenth').innerHTML = '10th function called out of ' + this.total();
+});
+
+        </script>
+    </head>
+    <body>
+        <div id="first"></div>
+        <div id="second"></div>
+        <div id="third"></div>
+        <div id="fourth"></div>
+        <div id="fifth"></div>
+        <div id="sixth"></div>
+        <div id="seventh"></div>
+        <div id="eighth"></div>
+        <div id="ninth"></div>
+        <div id="tenth"></div>
+
+        <script src="http://gist.github.com/414723.js?file=1.js"></script>
+    </body>
+</html>

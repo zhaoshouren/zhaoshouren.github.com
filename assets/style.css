@@ -1,0 +1,494 @@
+/*
+Theme Name: Zhao Shouren
+Theme URI: http://www.zhaoshouren.com/
+Description: Default theme for http://www.zhaoshouren.com/. This theme is intended to be used with the YUI CSS and may deviate from established WordPress naming conventions as a result.
+Version: 1.0b
+Author: Warren Chu
+Author URI: http://www.zhaoshouren.com/
+
+� Theme tested on Windows versions of: Safari 3.1, Firefox 2.0.0.13, and Internet Explorer 7.0.6001.18000.
+� IE 7 requires additional IE7.css stylesheet to make more consistent with Safari and Firefox.
+� This stylesheet makes use of the CS3 text-shadow property that is only supported by Safari as of 4/18/2008, other browser specific declarations are preceded by a comment.
+
+*/
+
+/* remove Firefox outline around buttons and site title when clicked */ a.imgBtn16x16, a.imgBtn30x30, #header a { outline: none; }
+
+/* colors & background images - start */
+
+html {
+    background-color: #333;
+}
+
+#header a {
+    color: #FFF;
+}
+
+#header a:visited {
+    color: #CCC;
+}
+
+#header a:hover,
+#header a:focus {
+    color: #F90;
+}
+
+#header a:active {
+    color: #FC0;
+}
+
+#hd,
+#ft {
+    background-color: #000;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+a:link {
+    color: #009;
+}
+
+a:visited {
+    color: #300;
+}
+
+a:hover,
+a:focus {
+    color: #00F;
+}
+
+a:active {
+    color: #F00;
+}
+
+
+/* colors & background images - end */
+
+/* fonts – start */
+body {
+    font-family: Verdana, Sans-Serif;
+}
+
+/* fonts – end */
+
+/* layout - start */
+
+#hd {
+    height: 40px;
+    top: 0px;
+}
+
+html {
+    height: 100%;
+    overflow: hidden; /*remove scrollbars in IE7 mode*/
+}
+
+body {
+    margin: 0px;
+    text-align: left; /*for IE7 compatibility*/
+}
+
+.absolute {
+    position: absolute;
+    z-index: 50;
+}
+
+.hidden {
+    display: none;
+}
+
+ul.nav
+{
+    /*height: 100%;*/
+    margin: 0px;
+    padding: 0px;
+    /*width: 100%;*/
+}
+
+ul.nav > li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+/* layout - end */
+
+
+/* buttons - start*/
+
+a.imgBtn30x30,
+a.imgBtn16x16 {
+    background-repeat: no-repeat;
+}
+
+a.imgBtn30x30 {
+    background-image: url( ./30x30.png );
+    height: 30px;
+    width: 30px;
+}
+
+a.imgBtn16x16 {
+    background-image: url( ./16x16.png );
+    height: 16px;
+    width: 16px;
+}
+
+/* buttons - end */
+
+#header {
+    display: block;
+    font-family: Georgia;
+    font-size: 24px;
+    font-variant: small-caps;
+    font-weight: bold;
+    height: 30px;
+    margin-left: 3px;
+    margin-top: 14px;
+    position: absolute;
+    /*Webkit*/ text-shadow: #000 0px 0px 5px;
+    top: 0px;
+    z-index: 100;
+}
+
+#header a {
+    text-decoration: none;
+}
+
+#header a:active {
+    background-position: 1px 0px;
+    vertical-align: -1px;
+    padding-left: 1px;
+    z-index: 100;
+}
+
+#title,
+#attribution,
+#prev,
+#play,
+#next {
+    position: absolute;
+    bottom: 80px;
+    z-index: 100;
+}
+
+#attribution
+{
+    cursor: pointer;
+    right: 100px;
+    display: none;
+}
+
+#attribution,
+#attribution:visited {
+    background-position: 0px -32px;
+    text-decoration: none;
+    color: #FFF;
+}
+
+#attribution:hover,
+#attribution:focus {
+    background-position: -16px -32px;
+    color: #F90;
+}
+
+#attribution:active {
+    background-position: -32px -32px;
+    color: #FC0;
+}
+
+#title {
+    right: 120px;
+    color: #FFF;
+    font-style: italic;
+    font-weight: bold;
+    overflow: hidden;
+    text-align: right;
+    white-space: nowrap;
+    /*Webkit*/ text-shadow: #000 0px 0px 5px;
+}
+
+#title > span.index {
+    font-weight: normal;
+    padding-left: 5px;
+    opacity: 0.7;
+    /*Webkit*/ text-shadow: #000 0px 0px 5px;
+}
+
+#next {
+    cursor: pointer;
+    right: 2px;
+}
+
+#next,
+#next:visited {
+    background-position: 0px -64px;
+}
+
+#next:hover,
+#next:focus {
+    background-position: -16px -64px;
+}
+
+#next.active,
+#next:active {
+    background-position: -32px -64px;
+}
+
+#prev {
+    cursor: pointer;
+    right: 40px;
+}
+
+#prev,
+#prev:visited {
+    background-position: 0px -96px;
+}
+
+#prev:hover,
+#prev:focus {
+    background-position: -16px -96px;
+}
+
+#prev.active,
+#prev:active {
+    background-position: -32px -96px;
+}
+
+#play {
+    cursor: pointer;
+    right: 20px;
+}
+
+#play,
+#play:visited {
+    background-position: 0px -48px;
+}
+
+#play:hover,
+#play:focus {
+    background-position: -16px -48px;
+}
+
+#play.active,
+#play:active {
+    background-position: -32px -48px;
+}
+
+#play.pause,
+#play.pause:visited {
+    background-position: 0px -80px;
+}
+
+#play.pause:hover,
+#play.pause:focus {
+    background-position: -16px -80px;
+}
+
+#play.pause.active,
+#play.pause:active
+{
+    background-position: -32px -80px;
+}
+
+#loading {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    bottom: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /*to center loading image in IE7*/
+    z-index: -2;
+}
+
+#thumbnails {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    z-index: 200;
+}
+
+#thumbnails a{
+    outline: 1px solid #FF0;
+    display: inline-block;
+    line-height: 0px;
+    margin-left: 5px;
+}
+
+#thumbnails a:hover,
+#thumbnails a:focus {
+    outline: 2px solid #F90;
+}
+
+#thumbnails a:active {
+    outline: 2px solid #FC0;
+}
+
+/* Custom Buttons - Start */
+
+#btn-rss,
+#btn-flickr,
+#btn-facebook,
+#btn-deviantArt,
+#btn-linkedin {
+    top: -30px;
+}
+
+#btn-rss:link {
+    background-position: 0px 0px;
+}
+
+#btn-rss:visited {
+    background-position: -30px 0px;
+}
+
+#btn-rss:hover,
+#btn-rss:focus {
+    background-position: -60px 0px;
+}
+
+#btn-rss:active {
+    background-position: -90px 0px;
+}
+
+#btn-flickr:link {
+    background-position: 0px -30px;
+}
+
+#btn-flickr:visited {
+    background-position: -30px -30px;
+}
+
+#btn-flickr:hover,
+#btn-flickr:focus {
+    background-position: -60px -30px;
+}
+
+#btn-flickr:active {
+    background-position: -90px -30px;
+}
+
+#btn-facebook:link {
+    background-position: 0px -60px;
+}
+
+#btn-facebook:visited {
+    background-position: -30px -60px;
+}
+
+#btn-facebook:hover,
+#btn-facebook:focus {
+    background-position: -60px -60px;
+}
+
+#btn-facebook:active {
+    background-position: -90px -60px;
+}
+
+#btn-deviantArt:link {
+    background-position: 0px -90px;
+}
+
+#btn-deviantArt:visited {
+    background-position: -30px -90px;
+}
+
+#btn-deviantArt:hover,
+#btn-deviantArt:focus {
+    background-position: -60px -90px;
+}
+
+#btn-deviantArt:active {
+    background-position: -90px -90px;
+}
+
+#btn-linkedin:link {
+    background-position: 0px -120px;
+}
+
+#btn-linkedin:visited {
+    background-position: -30px -120px;
+}
+
+#btn-linkedin:hover,
+#btn-linkedin:focus {
+    background-position: -60px -120px;
+}
+
+#btn-linkedin:active {
+    background-position: -90px -120px;
+}
+
+/* Custon Buttons - End */
+
+
+
+#frame {
+    /*background-color: transparent;*/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /*top: -50px;*/
+    overflow: hidden;
+    z-index: -1;
+}
+
+hr {
+    border: 0px;
+    border-bottom: 1px solid #FF0;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    width: 100%;
+}
+
+#hr1 {
+    top: 40px;
+}
+
+#hr2 {
+    bottom: 100px;
+}
+
+#ft {
+    bottom: 0px;
+    height: 100px;
+}
+
+#options {
+    text-align: center;
+}
+
+#options > div.overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 500;
+    background-color: #333;
+    opacity: 0.7;
+}
+
+#options > table {
+    position: absolute;
+    text-align: left;
+    width: auto;
+    margin: auto;
+    margin-top: 100px;
+    border: #C00 solid 5px;
+    border-collapse: separate;
+    opacity: 0.8;
+    z-index: 5001;
+}
+
+#options td {
+    background-color: #FFF;
+    vertical-align: top;
+    width: 50%;
+}
+
+#options td:first-child {
+    text-align: right;
+    padding-right: 10px;
+    border-right: #C00 solid 2px;
+}
