@@ -38,7 +38,7 @@
 
 
 //jQuery Photo Service plugin
-(function (jQuery) {
+(function (jQuery, pluginName) {
     var defaults = {
             empty: true, // empty contents of target element before appending image(s)
             limit: undefined, // maximum number of images to append; leave undefined to append all
@@ -54,7 +54,7 @@
             indexes: [], // sorted indexes for photos[]; either random or ordered
             randomized: false // whether indexes[] has been randomized or not
         },
-        key = 'photoService:configuration'; // for use with jQuery.data(key) to store configuration between calls to plugin
+        key = pluginName + ':configuration'; // for use with jQuery.data(key) to store configuration between calls to plugin
 
     function selectPhotos($element, photos, configuration) {
         var currentIndex = configuration.currentIndex,
@@ -144,7 +144,7 @@
         $element.append($photos.html());
     }
 
-    jQuery.fn.photoService = function (new_configuration) {
+    jQuery.fn[pluginName] = function (new_configuration) {
         var $this = this,
             configuration = jQuery.extend(true, {}, defaults, $this.data(key), new_configuration);
 
@@ -172,28 +172,27 @@
         }); 
     };
 
-    jQuery.extend({
-        photoService: {
-            getConfiguration: function ($target) {
-                return $target && $target.data && $target.data(key) && $target.data(key) || defaults;
-            },
-            defaults: function (new_defaults) {
-                return jQuery.extend(true, defaults, new_defaults);
-            },
-            getPhotos: function ($target) {
-                var configuration = this.getConfiguration($target);
-                
-                return configuration.service && configuration.service.getCachedPhotos() || [];
-            },
-            getPhoto: function ($target) {
-                var photos = this.getPhotos($target),
-                    configuration = this.getConfiguration($target);
+    jQuery[pluginName] = {
+        getConfiguration: function ($target) {
+            return $target && $target.data && $target.data(key) && $target.data(key) || defaults;
+        },
+        defaults: function (new_defaults) {
+            return jQuery.extend(true, defaults, new_defaults);
+        },
+        getPhotos: function ($target) {
+            var configuration = this.getConfiguration($target);
+            
+            return configuration.service && configuration.service.getCachedPhotos() || [];
+        },
+        getPhoto: function ($target) {
+            var photos = this.getPhotos($target),
+                configuration = this.getConfiguration($target);
 
-                return photos.length ? photos[configuration.indexes[configuration.currentIndex] || 0] : {};
-            }
+            return photos.length ? photos[configuration.indexes[configuration.currentIndex] || 0] : {};
         }
-    });
-}(jQuery));
+        
+    };
+}(jQuery, 'photoService')); //if 'photoService' conflicts rename
 
 
 
