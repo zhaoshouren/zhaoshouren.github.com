@@ -47,7 +47,7 @@
                     api_key: "bb4ea500727e218d0838ae2b40cf2369",
                     photoset_id: "72157623918551670",
                     photo_id: "4597269195",
-                    per_page: 10,
+                    per_page: 30,
                     page: 1
                 }
             }),
