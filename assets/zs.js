@@ -58,7 +58,7 @@
             //start: 'random',
             //increment: 0,
             limit: 1,
-            size: "large"
+            size: "original"
         },
 
         thumbnails = {
