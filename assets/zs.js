@@ -64,7 +64,7 @@
         thumbnails = {
             service: new jQuery.photoService.Picasa({
                 userID: "ajanhelendam",
-                albumID: "5347214534709152305",
+                albumID: "5573193879586048833",
                 method: "album"
             }),
 //            service: new ZS.Flickr({
