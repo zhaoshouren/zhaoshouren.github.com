@@ -99,11 +99,11 @@
                     imgWidth = $image.width();
 
                     $image.width(containerWidth);
-                    $image.height(imgHeight + containerWidth - imgWidth);
+                    $image.height(imgHeight * (containerWidth / imgWidth));
 
                     if ($image.height() < containerHeight) {
                         $image.height(containerHeight);
-                        $image.width(imgWidth + containerHeight - imgHeight);
+                        $image.width(imgWidth * (containerHeight / imgHeight));
                     }
 
                     setInterval(function () {
