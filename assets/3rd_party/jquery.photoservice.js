@@ -508,7 +508,7 @@
                         flickr.throwError("Could not find corresponding filter for method = '" + (method || this.method) + "'; if method is correct than it is not yet supported by this implementation.");
                     }
 
-                    return "http://api.flickr.com/services/rest/?format=json&jsoncallback=?&method=" + (method || this.method) + "&" + flickr.filterParameters(flickr.parameters, filter.concat(['api_key']));
+                    return "https://api.flickr.com/services/rest/?format=json&jsoncallback=?&method=" + (method || this.method) + "&" + flickr.filterParameters(flickr.parameters, filter.concat(['api_key']));
                 };
             }()),
             getPhotos: function (context, callback) {
