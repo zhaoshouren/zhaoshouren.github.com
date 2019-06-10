@@ -229,7 +229,6 @@ a.imgBtn16x16 {
     background-position: -16px -64px;
 }
 
-#next.active,
 #next:active {
     background-position: -32px -64px;
 }
@@ -249,7 +248,6 @@ a.imgBtn16x16 {
     background-position: -16px -96px;
 }
 
-#prev.active,
 #prev:active {
     background-position: -32px -96px;
 }
@@ -269,7 +267,6 @@ a.imgBtn16x16 {
     background-position: -16px -48px;
 }
 
-#play.active,
 #play:active {
     background-position: -32px -48px;
 }
@@ -284,7 +281,6 @@ a.imgBtn16x16 {
     background-position: -16px -80px;
 }
 
-#play.pause.active,
 #play.pause:active
 {
     background-position: -32px -80px;

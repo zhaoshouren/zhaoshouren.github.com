@@ -71,7 +71,7 @@
             photo,
             image,
             sources,
-            $photos = jQuery('<div>'), //temporary node we'll use to build up the HTML chain before we attach it to the DOMex
+            $photos = jQuery('<div>'), //temporary node we'll use to build up the HTML chain before we attach it to the DOM
             $photo,
             link = configuration.link;
 
