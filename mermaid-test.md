@@ -1,5 +1,7 @@
 # Sample Mermaid Diagrams
 
+
+## Class Diagram
 ```mermaid
 ---
 title: Animal example
